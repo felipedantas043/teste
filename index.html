@@ -1,15 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Jogo da velha</title>
 </head>
 <body>
-    <div>
-        teste
-    </div>
+    <header>
+        <h1>Jogo da velha</h1>
+    </header>
+    <section>
+        <div class="tabuleiro">
+            <div onclick="oia(id)" id="0" class="blocos" style="border-top: 0px; border-left: 0;"><div class="iconX"></div> <div class="iconO"></div></div>
+            <div onclick="oia(id)" id="1" class="blocos" style="border-top: 0px;"><div class="iconX"></div> <div class="iconO"></div></div>
+            <div onclick="oia(id)" id="2" class="blocos" style="border-top: 0px; border-right: 0;"><div class="iconX"></div> <div class="iconO"></div></div>
+            <div onclick="oia(id)" id="3" class="blocos" style=" border-left: 0;"><div class="iconX"></div> <div class="iconO"></div></div>
+            <div onclick="oia(id)" id="4" class="blocos" ><div class="iconX"></div> <div class="iconO"></div></div>
+            <div onclick="oia(id)" id="5" class="blocos" style="border-right: 0px;"><div class="iconX"></div> <div class="iconO"></div></div>
+            <div onclick="oia(id)" id="6" class="blocos" style="border-bottom: 0px; border-left: 0;"><div class="iconX"></div> <div class="iconO"></div></div>
+            <div onclick="oia(id)" id="7" class="blocos" style="border-bottom: 0px;"><div class="iconX"></div> <div class="iconO"></div></div>
+            <div onclick="oia(id)" id="8" class="blocos" style="border-bottom: 0px; border-right: 0;"><div class="iconX"></div> <div class="iconO"></div></div>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+    <script>
+        let x = document.querySelectorAll(".iconX")
+        let o = document.querySelectorAll(".iconO")
+        let blocos = document.querySelectorAll(".blocos")
+        let jogadas = 0
+        function oia(id) {
+            jogadas++
+            console.log("essas foram as jogadas"+jogadas)
+            if (x[id].style.display = "none") {
+                x[id].style.display = "block"
+                blocos[id].style.cursor = "not-allowed"
+            }else{
+                x[id].style.display = "none" 
+            }
+            let r = Math.floor(Math.random()*9)
+            console.log("o pc vai jogar em "+ r)
+
+                
+                if (r != id ){
+                    if (o[r].style.display == "none" && x[r].style.display == "none") {
+                        o[r].style.display = "block";
+                        blocos[r].style.cursor = "not-allowed";
+                        console.log('o pc jogou em '+ r)
+                    }else{
+                        if (o[r].style.display == "block" && x[r].style.display == "block") {
+                            r.Math.floor(Math.random()*9)
+                            console.log
+                            o[r].style.display = "block"
+                        }
+                    }
+                               
+                }else{
+                    console.log("R É IGUAL A ID !!!!!!!!!!!!")
+                }
+            
+            
+        }
+
+        for (let i = 0; i < x.length; i++) {
+            x[i].style.display = "none"
+            
+        }
+        for (let i = 0; i < o.length; i++) {
+            o[i].style.display = "none"
+            
+        }
+    </script>
 </body>
 </html>
