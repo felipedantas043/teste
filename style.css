@@ -1,3 +1,66 @@
-body{
-    background-color: rgba(0, 0, 0, 0.164);
+@charset "UTF-8";
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#menu{
+    display: grid;
+    position: fixed;
+    background-color: rgba(245, 245, 245, 0);
+    left: 100px;
+    top: 10px;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+#menu ul{
+    display: flex;
+    list-style: none;
+}
+#menu li{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+#menu a{
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+#menu a:hover{
+    background: rgba(0, 0, 0, 0.178);
+    color: white;
+    transition: 1s;
+}
+@keyframes slidein {
+    from{
+        top: -100px;
+    }
+    to{
+        top:10px;
+    }
+}
+footer{
+    padding: 20px;
+    background: black;
+    color: white;
+}
+p{
+    animation-duration: 50s;
+    animation-name: frase;
+    animation-iteration-count: infinite;
+    overflow-x: hidden;
+}
+
+@keyframes frase {
+    from{
+        margin-left: -100px;
+    }
+    to{
+        margin-left: 100%;
+    }
+}
+main div{
+    padding: 30px;
+    height: 500px;
 }
